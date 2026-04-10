@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Parameterized TestNG Suite">
+    <test name="Test Parameterization" parallel="methods" thread-count="1">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="tddtestcases.ParameterizationTest">
+            </class>
+        </classes>
+    </test>
+</suite>

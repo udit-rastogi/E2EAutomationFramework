@@ -1,0 +1,7 @@
+iamuser:
+   user: "PersonalUser"
+region: "ap-southeast-2"
+s3:
+   bucketName: "demo-bucket-412906648382-ap-southeast-2-an"
+   objectName: "Section 1 - Intro/Day0/Playwright+Introduction.pdf"
+   destinationPath: "s3Downloads/${fileName}.pdf"

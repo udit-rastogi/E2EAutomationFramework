@@ -7,6 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Test Automation Code</name>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<testSuitePath>src/test/resources/testsuites</testSuitePath>
+		<testngXML>parameterized_testng</testngXML>
+	</properties>
+
 	<dependencies>
 		<!-- Source: https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
 		<dependency>
@@ -35,6 +41,33 @@
 			<version>7.11.0</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.39.0</version>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.15.0</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${testSuitePath}/${testngXML}.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
